@@ -15,11 +15,14 @@ function driverNamesWithRevenueOver(array, number){
 
 function exactMatch(array, attribute){
 
-    let attributeKey = Object.keys(attribute)
-    let attributeValues = Object.values(attribute)
+
 
     return array.filter(function (driver){
-        return  driver[attributeKey[0]] === attributeValues[0]
+        for(const key in driver){
+
+            return driver[key] == attribute[key]
+
+        }
     })
 }
 
